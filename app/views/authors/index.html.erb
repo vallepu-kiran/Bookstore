@@ -1,0 +1,17 @@
+<h1>Authors</h1>
+
+<ul>
+  <% @authors.each do |author| %>
+    <li>
+      <a href="<%= author_path(author) %>">
+        <%= author.first_name %>
+      </a>
+    </li>
+  <% end %>
+  <h3>
+  Books    : <%= link_to "view books",books_path %><br>
+  Customers: <%= link_to "view Customers",customers_path %><br>  
+  Suppliers: <%= link_to "view suppliers",suppliers_path %><br></h3>
+
+
+

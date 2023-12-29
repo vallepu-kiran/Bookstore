@@ -1,0 +1,10 @@
+
+<h1>Order Details</h1>
+<p><strong>Customer:</strong> <%= @order.customer.first_name %></p>
+<p><strong>Date Submitted:</strong> <%= @order.date_submitted %></p>
+<p><strong>Status:</strong> <%= @order.status %></p>
+<p><strong>Shipping:</strong> <%= @order.shipping %></p>
+<p><strong>Tax:</strong> <%= @order.tax %></p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

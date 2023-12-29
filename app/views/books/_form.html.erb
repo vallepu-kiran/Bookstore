@@ -1,0 +1,28 @@
+<%= form_with model: @book do |form| %>
+    <div>
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </div>
+    <div class="field">
+    <%= form.label :author_id %><br>
+    <%= form.collection_select(:author_id, Author.all, :id, :first_name, prompt: true) %>
+  </div>
+  <div class="actions">
+  
+    <div>
+      <%= form.label :year_published %><br>
+      <%= form.text_field :year_published %>
+    </div>
+    <div>
+    <%= form.label :isbn %><br>
+    <%= form.text_field :isbn %>
+  
+    <div>
+    <div>
+    <%= form.label :price %><br>
+    <%= form.text_field :price %>
+  
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>

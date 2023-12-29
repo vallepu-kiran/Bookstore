@@ -1,0 +1,36 @@
+<%= form_with model: @order do |form| %>
+   
+  <div class="field">
+    <%= form.label :customer_id %><br>
+    <%= form.collection_select(:customer_id, Customer.all, :id, :first_name, prompt: true) %>
+  </div>
+
+  <div class="field">
+  <%= form.label :book_id %><br>
+  <%= form.collection_select(:book_id, Book.all, :id, :title, prompt: true) %>
+  </div>
+  <div>
+  <%= form.label :date_submitted %><br>
+  <%= form.date_select :date_submitted, start_year: 1800, end_year: Time.now.year %>
+  </div>
+  <div>
+  <%= form.label :status %><br>
+  <%= form.select :status,[:shipped, :being_packed, :complete, :cancelled]%>
+  </div>
+  
+  <div>
+   <%= form.label :shipping %><br>
+   <%= form.number_field :shipping %>
+   </div>
+  <div>
+   <%= form.label :tax %><br>
+   <%= form.number_field :tax %>
+   </div>
+  <div>
+  <%= form.label :total %><br>
+   <%= form.number_field :total %>
+</div>  
+<%= form.submit %>
+    </div>
+  <% end %>
+  

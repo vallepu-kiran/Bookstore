@@ -1,0 +1,8 @@
+<h1>Review Details</h1>
+
+<p><strong>Customer:</strong> <%= @review.customer.first_name %> <%= @review.customer.last_name %></p>
+<p><strong>Body:</strong> <%= @review.body %></p>
+<p><strong>Created At:</strong> <%= @review.created_at %></p>
+
+<%= link_to 'Back to Reviews', reviews_path %>
+<%= link_to 'Show Review', review_path(@review) %>

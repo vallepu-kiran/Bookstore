@@ -1,0 +1,32 @@
+<h2>Book Details</h2><h2>-----------------------------</h2>
+<h3>Title: <%= @book.title%></h3>
+<h3>Author: <%= @book.author.first_name %></h3>
+
+<h3>Year_published: <%= @book.year_published %></h3>
+<h3>ISBN: <%= @book.isbn %></h3>
+<h3>Price:₹<%= @book.price %></h3>
+
+<ul>
+  <li><%= link_to "Edit", edit_book_path(@book) %></li>
+  <li><%= link_to "Destroy", book_path(@book), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+<% if @customers.present? %>
+  <ol>
+    <% @customers.each do |customer| %>
+      <li>Customer: <%= customer.first_name %></li>
+    <% end %>
+  </ol>
+<% else %>
+  <p>No customers available.</p>
+<% end %>
+<h4>Reviews:</h4>
+<% @reviews.each do |review| %>
+  <p><%= review.body %></p>
+<% end %>
+
+<%= link_to "Add Review", new_book_review_path(@book) %>
+

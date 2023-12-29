@@ -1,0 +1,25 @@
+
+<h4>FirstName: <%= @customer.first_name%></h4>
+
+<h4>LastName: <%= @customer.last_name %></h4>
+<h4>Title: <%= @customer.title %></h4>
+<h4>Emali: <%= @customer.email %></h4>
+<ul>
+  <li><%= link_to "Edit", edit_customer_path(@customer) %></li>
+  <li><%= link_to "Destroy", customer_path(@customer), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+<h2>Orders</h2>
+<ul>
+  <% @customer.orders.each do |order| %>
+    <li>
+      Order ID: <%= order.id %><br>
+      Date Submitted: <%= order.date_submitted %><br>
+      Status: <%= order.status %><br>
+      <!-- Add other order details as needed -->
+    </li>
+  <% end %>
+</ul>

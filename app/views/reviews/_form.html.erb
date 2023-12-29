@@ -1,0 +1,19 @@
+
+<%= form_with model: [book,review] do |form| %>
+
+    <div class="field">
+    <%= form.label :customer_id %><br>
+    <%= form.collection_select(:customer_id, Customer.all, :id, :first_name,prompt: true) %>
+  </div>
+
+    <div class="field">
+      <%= form.label :body %><br>
+      <%= form.text_field :body %>
+    </div>
+
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+  
